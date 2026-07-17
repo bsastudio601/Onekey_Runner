@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://clkscjfq7c7q2"]
+
+[ext_resource type="Texture2D" uid="uid://c0eygb602phny" path="res://assets/cursor .png" id="1_1eco6"]
+[ext_resource type="Script" uid="uid://dt87gqrweevqy" path="res://scenes/cursor.gd" id="1_s0nli"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t4kkl"]
+radius = 4.0
+height = 18.0
+
+[node name="cursor" type="StaticBody2D" unique_id=937360007 groups=["obst"]]
+script = ExtResource("1_s0nli")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1923326329]
+shape = SubResource("CapsuleShape2D_t4kkl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1251860646]
+texture = ExtResource("1_1eco6")

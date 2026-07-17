@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cxcww8odch6qq"]
+
+[ext_resource type="Script" uid="uid://c6dr4mcdwthcr" path="res://scripts/usb.gd" id="1_k8rbi"]
+[ext_resource type="Texture2D" uid="uid://b0uwyj2wx7put" path="res://assets/usb.png" id="2_om3kg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hoct8"]
+radius = 11.0
+height = 36.0
+
+[node name="usb" type="StaticBody2D" unique_id=1764357512]
+position = Vector2(3, -32)
+script = ExtResource("1_k8rbi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=741169651]
+position = Vector2(13, 16)
+texture = ExtResource("2_om3kg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1659362648]
+position = Vector2(13, 18)
+shape = SubResource("CapsuleShape2D_hoct8")
+one_way_collision = true

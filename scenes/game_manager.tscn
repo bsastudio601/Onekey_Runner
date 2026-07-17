@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://w1k41gd7syw1"]
+
+[ext_resource type="PackedScene" uid="uid://bq7ffejbx1784" path="res://scenes/ground.tscn" id="1_o2178"]
+[ext_resource type="PackedScene" uid="uid://cy75upypp0ifa" path="res://scenes/celling.tscn" id="2_oo155"]
+[ext_resource type="PackedScene" uid="uid://dmcmjjfgb1mde" path="res://scenes/player.tscn" id="3_d5upp"]
+[ext_resource type="Script" uid="uid://b173f8aol0kra" path="res://scenes/spawner.gd" id="4_oo155"]
+
+[node name="Game Manager" type="Node2D" unique_id=99061253]
+
+[node name="ground" parent="." unique_id=177742966 instance=ExtResource("1_o2178")]
+
+[node name="celling" parent="." unique_id=338118330 instance=ExtResource("2_oo155")]
+position = Vector2(630, 360)
+rotation = 3.1415927
+
+[node name="player" parent="." unique_id=246476462 instance=ExtResource("3_d5upp")]
+position = Vector2(61, 272)
+
+[node name="spawner" type="Node" parent="." unique_id=319148884]
+script = ExtResource("4_oo155")
+
+[node name="Marker2D" type="Marker2D" parent="spawner" unique_id=2035886645]
+position = Vector2(651, 312)
+
+[node name="usbtimer" type="Timer" parent="spawner" unique_id=101945430]
+
+[node name="spawner2" type="Node" parent="." unique_id=1432160148]
+script = ExtResource("4_oo155")
+
+[node name="Marker2D" type="Marker2D" parent="spawner2" unique_id=2000104607]
+position = Vector2(650, 55)
+
+[node name="usbtimer" type="Timer" parent="spawner2" unique_id=1872193038]

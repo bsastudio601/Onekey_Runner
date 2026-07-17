@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cerfbnwg3272h"]
+
+[ext_resource type="Script" uid="uid://bf4rl2lnhis0a" path="res://scenes/usbcol.gd" id="1_d4qn5"]
+[ext_resource type="Texture2D" uid="uid://b0uwyj2wx7put" path="res://assets/usb.png" id="1_l5hmx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tpifi"]
+
+[node name="usbcol" type="StaticBody2D" unique_id=1547788627 groups=["obst"]]
+script = ExtResource("1_d4qn5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1074270467]
+texture = ExtResource("1_l5hmx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1463433698]
+shape = SubResource("CapsuleShape2D_tpifi")

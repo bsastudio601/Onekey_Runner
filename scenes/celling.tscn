@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cy75upypp0ifa"]
+
+[ext_resource type="Texture2D" uid="uid://c6cutis3l81ft" path="res://assets/ground_tile.png" id="1_aitjd"]
+[ext_resource type="Script" uid="uid://b4txjapbxygjs" path="res://scenes/groundsprite.gd" id="2_aitjd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3g4uh"]
+size = Vector2(630, 32)
+
+[node name="celling" type="StaticBody2D" unique_id=338118330]
+
+[node name="groundsprite" type="Sprite2D" parent="." unique_id=1530410193]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(315.00003, 344)
+scale = Vector2(0.99841267, 1)
+texture = ExtResource("1_aitjd")
+region_enabled = true
+region_rect = Rect2(0, 0, 631, 32)
+script = ExtResource("2_aitjd")
+
+[node name="groundcollision" type="CollisionShape2D" parent="." unique_id=1128074926]
+position = Vector2(315, 344)
+shape = SubResource("RectangleShape2D_3g4uh")

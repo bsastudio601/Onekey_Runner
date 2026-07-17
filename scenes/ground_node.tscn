@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b8de6gqjoxhmw"]
+
+[ext_resource type="Texture2D" uid="uid://urk1m5j32qtr" path="res://assets/ground sprite.png" id="1_pdu8p"]
+[ext_resource type="Script" uid="uid://c1on10c4xn0eg" path="res://scripts/sprite_2d.gd" id="2_vdlse"]
+
+[node name="Ground Node" type="Node2D" unique_id=1479679762]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1561220776]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(90, 304)
+texture = ExtResource("1_pdu8p")
+region_enabled = true
+region_rect = Rect2(0, 0, 180, 32)
+region_filter_clip_enabled = true
+script = ExtResource("2_vdlse")
