@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bq7ffejbx1784"]
 
-[ext_resource type="Texture2D" uid="uid://c6cutis3l81ft" path="res://assets/ground_tile.png" id="1_mi8v4"]
+[ext_resource type="Texture2D" uid="uid://c7ew2io2o0e2p" path="res://assets/ground-sprite.png" id="1_pybca"]
 [ext_resource type="Script" uid="uid://cxuiubeddiv8d" path="res://scripts/groundsprite.gd" id="2_t7tip"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b30ca"]
-size = Vector2(630, 32)
+size = Vector2(630, 33)
 
 [node name="ground" type="StaticBody2D" unique_id=177742966]
 
@@ -13,11 +13,11 @@ texture_filter = 1
 texture_repeat = 2
 position = Vector2(315.00003, 344)
 scale = Vector2(0.99841267, 1)
-texture = ExtResource("1_mi8v4")
+texture = ExtResource("1_pybca")
 region_enabled = true
 region_rect = Rect2(0, 0, 631, 32)
 script = ExtResource("2_t7tip")
 
 [node name="groundcollision" type="CollisionShape2D" parent="." unique_id=1061095354]
-position = Vector2(315, 344)
+position = Vector2(315, 343.5)
 shape = SubResource("RectangleShape2D_b30ca")

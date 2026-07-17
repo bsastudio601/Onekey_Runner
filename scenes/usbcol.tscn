@@ -1,15 +1,62 @@
 [gd_scene format=3 uid="uid://cerfbnwg3272h"]
 
 [ext_resource type="Script" uid="uid://bf4rl2lnhis0a" path="res://scenes/usbcol.gd" id="1_d4qn5"]
-[ext_resource type="Texture2D" uid="uid://b0uwyj2wx7put" path="res://assets/usb.png" id="1_l5hmx"]
+[ext_resource type="Texture2D" uid="uid://cyrbfvo627i83" path="res://assets/usb sprite.png" id="2_d4qn5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tpifi"]
+radius = 13.0
+height = 32.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnnee"]
+atlas = ExtResource("2_d4qn5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tole8"]
+atlas = ExtResource("2_d4qn5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tylkl"]
+atlas = ExtResource("2_d4qn5")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfc1x"]
+atlas = ExtResource("2_d4qn5")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yloah"]
+atlas = ExtResource("2_d4qn5")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b30ca"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gnnee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tole8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tylkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfc1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yloah")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="usbcol" type="StaticBody2D" unique_id=1547788627 groups=["obst"]]
 script = ExtResource("1_d4qn5")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1074270467]
-texture = ExtResource("1_l5hmx")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1463433698]
 shape = SubResource("CapsuleShape2D_tpifi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2140193698]
+sprite_frames = SubResource("SpriteFrames_b30ca")
+autoplay = "default"
+frame_progress = 0.6574709

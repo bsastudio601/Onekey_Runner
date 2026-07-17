@@ -4,7 +4,7 @@ extends Node
 @onready var spawn_timer = $usbtimer
 
 var usb_scene = [
-	preload("res://scenes/usbcol.tscn"),
+	preload("res://scenes/usbcolcel.tscn"),
 	preload("res://scenes/cursor.tscn")
 ]
 
@@ -19,6 +19,8 @@ func spawn_usb() -> void:
 
 	usb.position = spawn_point.position
 	add_child(usb)
+
+	print("Spawned at:", usb.position)
 
 	start_spawn_timer()
 

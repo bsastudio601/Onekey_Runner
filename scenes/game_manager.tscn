@@ -1,11 +1,20 @@
 [gd_scene format=3 uid="uid://w1k41gd7syw1"]
 
+[ext_resource type="Script" uid="uid://c4q0hjbp2xmpr" path="res://scenes/game_manager.gd" id="1_k4jhu"]
 [ext_resource type="PackedScene" uid="uid://bq7ffejbx1784" path="res://scenes/ground.tscn" id="1_o2178"]
 [ext_resource type="PackedScene" uid="uid://cy75upypp0ifa" path="res://scenes/celling.tscn" id="2_oo155"]
 [ext_resource type="PackedScene" uid="uid://dmcmjjfgb1mde" path="res://scenes/player.tscn" id="3_d5upp"]
 [ext_resource type="Script" uid="uid://b173f8aol0kra" path="res://scenes/spawner.gd" id="4_oo155"]
+[ext_resource type="Script" uid="uid://dimcvxflmpukn" path="res://scenes/spawner_2.gd" id="5_eaq8r"]
+[ext_resource type="FontFile" uid="uid://dfcb3wlg73h2k" path="res://assets/fonts/Jersey25-Regular.ttf" id="6_jdad8"]
+[ext_resource type="PackedScene" uid="uid://cqvgr1f2gi8lj" path="res://scenes/control.tscn" id="6_ternb"]
+[ext_resource type="Script" uid="uid://ucxkelu175jq" path="res://scenes/label_2.gd" id="7_q8mjp"]
+[ext_resource type="PackedScene" uid="uid://cp6n56wa05exn" path="res://parallax_background.tscn" id="10_frtjd"]
 
 [node name="Game Manager" type="Node2D" unique_id=99061253]
+script = ExtResource("1_k4jhu")
+
+[node name="ParallaxBackground" parent="." unique_id=1873171772 instance=ExtResource("10_frtjd")]
 
 [node name="ground" parent="." unique_id=177742966 instance=ExtResource("1_o2178")]
 
@@ -14,7 +23,7 @@ position = Vector2(630, 360)
 rotation = 3.1415927
 
 [node name="player" parent="." unique_id=246476462 instance=ExtResource("3_d5upp")]
-position = Vector2(61, 272)
+position = Vector2(99, 308)
 
 [node name="spawner" type="Node" parent="." unique_id=319148884]
 script = ExtResource("4_oo155")
@@ -25,9 +34,34 @@ position = Vector2(651, 312)
 [node name="usbtimer" type="Timer" parent="spawner" unique_id=101945430]
 
 [node name="spawner2" type="Node" parent="." unique_id=1432160148]
-script = ExtResource("4_oo155")
+script = ExtResource("5_eaq8r")
 
 [node name="Marker2D" type="Marker2D" parent="spawner2" unique_id=2000104607]
-position = Vector2(650, 55)
+position = Vector2(651, 48)
 
 [node name="usbtimer" type="Timer" parent="spawner2" unique_id=1872193038]
+
+[node name="GameOver" parent="." unique_id=1276264717 instance=ExtResource("6_ternb")]
+
+[node name="Label2" type="Label" parent="." unique_id=1930378180]
+offset_left = 128.0
+offset_top = 164.0
+offset_right = 503.0
+offset_bottom = 213.0
+theme_override_fonts/font = ExtResource("6_jdad8")
+text = "press SPACE to jump 
+there is a 50% chance gravity flips when jumping"
+horizontal_alignment = 1
+script = ExtResource("7_q8mjp")
+
+[node name="Score_Label" type="Label" parent="." unique_id=942031889]
+z_index = 10
+offset_left = 6.0
+offset_top = 43.0
+offset_right = 46.0
+offset_bottom = 66.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.52156866)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("6_jdad8")

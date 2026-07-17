@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@export var speed := 240.0
+@export var speed := 200.0
 
 func _process(delta):
 	position.x -= speed * delta
